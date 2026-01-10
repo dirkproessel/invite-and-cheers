@@ -1,27 +1,31 @@
 import { motion } from "framer-motion";
-import { Calendar, Clock, MapPin, Gift } from "lucide-react";
+import { Calendar, Clock, MapPin, Shirt, Cake } from "lucide-react";
 
 const EventDetails = () => {
   const details = [
     {
       icon: Calendar,
-      label: "Datum",
+      label: "WANN",
       value: "Samstag, 15. Februar 2025",
+      emoji: "📅",
     },
     {
       icon: Clock,
-      label: "Uhrzeit",
-      value: "Ab 18:00 Uhr",
+      label: "UHRZEIT",
+      value: "Ab 14:00 Uhr",
+      emoji: "⏰",
     },
     {
       icon: MapPin,
-      label: "Ort",
+      label: "WO",
       value: "Musterstraße 123, 12345 Berlin",
+      emoji: "📍",
     },
     {
-      icon: Gift,
-      label: "Dresscode",
-      value: "Festlich & Bequem",
+      icon: Shirt,
+      label: "DRESSCODE",
+      value: "Komm als dein Lieblings-YouTuber! 🌟",
+      emoji: "👕",
     },
   ];
 
@@ -32,28 +36,38 @@ const EventDetails = () => {
       transition={{ duration: 0.6, delay: 0.5 }}
       className="w-full max-w-xl mx-auto"
     >
-      <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gold-light/30 shadow-soft">
-        <h3 className="font-display text-2xl text-center text-foreground mb-6">
-          ✨ Details zur Feier ✨
-        </h3>
+      {/* Rainbow border effect */}
+      <div className="absolute -inset-1 rainbow-border rounded-3xl opacity-50 blur-sm" />
+      
+      <div className="relative bg-card rounded-3xl p-6 sm:p-8 border-4 border-electric-blue/50 shadow-pop">
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <Cake className="w-8 h-8 text-primary wiggle" />
+          <h3 className="text-3xl text-center text-foreground">
+            PARTY DETAILS
+          </h3>
+          <Cake className="w-8 h-8 text-primary wiggle" />
+        </div>
         
         <div className="space-y-4">
           {details.map((item, index) => (
             <motion.div
               key={item.label}
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
-              className="flex items-center gap-4 p-3 rounded-xl bg-champagne/50 hover:bg-champagne transition-colors"
+              className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-secondary/20 to-accent/20 hover:from-secondary/30 hover:to-accent/30 transition-all border-2 border-transparent hover:border-gaming-purple/30"
             >
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <item.icon className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground font-medium">
-                  {item.label}
+              <motion.div 
+                className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-neon-pink flex items-center justify-center flex-shrink-0 shadow-lg"
+                whileHover={{ rotate: 10, scale: 1.1 }}
+              >
+                <item.icon className="w-7 h-7 text-primary-foreground" />
+              </motion.div>
+              <div className="flex-1">
+                <p className="text-sm text-gaming-purple font-bold tracking-wider">
+                  {item.emoji} {item.label}
                 </p>
-                <p className="text-foreground font-semibold">
+                <p className="text-foreground font-bold text-lg">
                   {item.value}
                 </p>
               </div>

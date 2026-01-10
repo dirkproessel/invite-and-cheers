@@ -8,25 +8,30 @@ interface ConfettiPiece {
   duration: number;
   color: string;
   size: number;
+  shape: "square" | "circle" | "star";
 }
 
 const Confetti = () => {
   const pieces = useMemo<ConfettiPiece[]>(() => {
     const colors = [
-      "hsl(38 70% 50%)",
-      "hsl(45 80% 60%)",
-      "hsl(340 50% 65%)",
-      "hsl(340 60% 85%)",
-      "hsl(40 40% 92%)",
+      "hsl(0 90% 55%)",      // YouTube red
+      "hsl(320 100% 60%)",   // Neon pink
+      "hsl(195 100% 50%)",   // Electric blue
+      "hsl(280 85% 60%)",    // Gaming purple
+      "hsl(45 100% 55%)",    // Sunny yellow
+      "hsl(150 100% 45%)",   // Neon green
     ];
     
-    return Array.from({ length: 30 }, (_, i) => ({
+    const shapes: ("square" | "circle" | "star")[] = ["square", "circle", "star"];
+    
+    return Array.from({ length: 40 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
-      delay: Math.random() * 3,
-      duration: 3 + Math.random() * 2,
+      delay: Math.random() * 4,
+      duration: 2 + Math.random() * 3,
       color: colors[Math.floor(Math.random() * colors.length)],
-      size: 6 + Math.random() * 8,
+      size: 8 + Math.random() * 12,
+      shape: shapes[Math.floor(Math.random() * shapes.length)],
     }));
   }, []);
 
@@ -35,15 +40,21 @@ const Confetti = () => {
       {pieces.map((piece) => (
         <motion.div
           key={piece.id}
-          className="absolute rounded-sm"
+          className={piece.shape === "circle" ? "rounded-full" : piece.shape === "star" ? "" : ""}
           style={{
+            position: "absolute",
             left: `${piece.x}%`,
-            top: -20,
+            top: -30,
             width: piece.size,
             height: piece.size,
-            backgroundColor: piece.color,
+            backgroundColor: piece.shape !== "star" ? piece.color : "transparent",
+            borderRadius: piece.shape === "circle" ? "50%" : piece.shape === "square" ? "2px" : "0",
+            clipPath: piece.shape === "star" 
+              ? "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"
+              : "none",
+            background: piece.shape === "star" ? piece.color : undefined,
           }}
-          initial={{ y: -20, rotate: 0, opacity: 1 }}
+          initial={{ y: -30, rotate: 0, opacity: 1 }}
           animate={{
             y: "100vh",
             rotate: 720,
@@ -54,7 +65,7 @@ const Confetti = () => {
             delay: piece.delay,
             ease: "easeOut",
             repeat: Infinity,
-            repeatDelay: 2,
+            repeatDelay: 1,
           }}
         />
       ))}
