@@ -57,17 +57,21 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
+        youtube: {
+          red: "hsl(var(--youtube-red))",
         },
-        champagne: "hsl(var(--champagne))",
-        rose: {
-          DEFAULT: "hsl(var(--rose))",
-          light: "hsl(var(--rose-light))",
+        neon: {
+          pink: "hsl(var(--neon-pink))",
+          green: "hsl(var(--neon-green))",
         },
-        cream: "hsl(var(--cream))",
+        electric: {
+          blue: "hsl(var(--electric-blue))",
+        },
+        gaming: {
+          purple: "hsl(var(--gaming-purple))",
+          dark: "hsl(var(--dark-gaming))",
+        },
+        sunny: "hsl(var(--sunny-yellow))",
       },
       borderRadius: {
         lg: "var(--radius)",

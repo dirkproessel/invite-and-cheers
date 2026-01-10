@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, Youtube } from "lucide-react";
 import { useState, useRef } from "react";
 
 const VideoGreeting = () => {
@@ -24,47 +24,79 @@ const VideoGreeting = () => {
       transition={{ duration: 0.8, delay: 0.4 }}
       className="relative w-full max-w-2xl mx-auto"
     >
-      <div className="relative rounded-2xl overflow-hidden shadow-glow bg-card border border-gold-light/30">
-        {/* Decorative frame */}
-        <div className="absolute inset-0 border-4 border-gold/20 rounded-2xl pointer-events-none z-10" />
+      {/* Rainbow border effect */}
+      <div className="absolute -inset-1 rainbow-border rounded-3xl opacity-75 blur-sm" />
+      
+      <div className="relative rounded-2xl overflow-hidden bg-card border-4 border-gaming-purple/50 shadow-pop">
+        {/* YouTube-style top bar */}
+        <div className="bg-primary px-4 py-2 flex items-center gap-2">
+          <Youtube className="w-6 h-6 text-primary-foreground" />
+          <span className="font-bold text-primary-foreground text-sm">EXKLUSIVES VIDEO!</span>
+        </div>
         
-        {/* Video placeholder with gradient */}
-        <div className="relative aspect-video bg-gradient-to-br from-champagne to-rose-light flex items-center justify-center">
+        {/* Video area */}
+        <div className="relative aspect-video bg-gradient-to-br from-gaming-purple to-electric-blue flex items-center justify-center">
           <video
             ref={videoRef}
             className="absolute inset-0 w-full h-full object-cover"
             poster=""
             onEnded={() => setIsPlaying(false)}
           >
-            {/* Add video source here */}
             <source src="" type="video/mp4" />
           </video>
           
-          {/* Play button overlay */}
+          {/* Play button - YouTube style */}
           <motion.button
             onClick={togglePlay}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className="relative z-20 w-20 h-20 rounded-full bg-primary/90 backdrop-blur-sm flex items-center justify-center shadow-glow transition-colors hover:bg-primary"
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.9 }}
+            className="relative z-20 w-24 h-24 rounded-2xl bg-primary flex items-center justify-center shadow-glow pulse-glow transition-all"
           >
             {isPlaying ? (
-              <Pause className="w-8 h-8 text-primary-foreground" />
+              <Pause className="w-10 h-10 text-primary-foreground" />
             ) : (
-              <Play className="w-8 h-8 text-primary-foreground ml-1" />
+              <Play className="w-10 h-10 text-primary-foreground ml-1" />
             )}
           </motion.button>
           
-          {/* Shimmer effect */}
-          <div className="absolute inset-0 shimmer opacity-50" />
+          {/* Decorative emojis */}
+          <motion.span 
+            className="absolute top-4 left-4 text-4xl"
+            animate={{ rotate: [-10, 10, -10] }}
+            transition={{ duration: 1, repeat: Infinity }}
+          >
+            🎮
+          </motion.span>
+          <motion.span 
+            className="absolute top-4 right-4 text-4xl"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 0.8, repeat: Infinity }}
+          >
+            🎬
+          </motion.span>
+          <motion.span 
+            className="absolute bottom-4 left-4 text-4xl"
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 1.2, repeat: Infinity }}
+          >
+            ⭐
+          </motion.span>
+          <motion.span 
+            className="absolute bottom-4 right-4 text-4xl"
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+          >
+            🎉
+          </motion.span>
         </div>
         
         {/* Caption */}
-        <div className="p-4 text-center bg-card/80 backdrop-blur-sm">
-          <p className="font-display text-lg text-foreground">
-            🎬 Persönliche Video-Grußbotschaft
+        <div className="p-4 text-center bg-card">
+          <p className="font-bold text-xl text-foreground">
+            🎬 Meine Video-Nachricht an DICH! 🎬
           </p>
-          <p className="text-sm text-muted-foreground mt-1">
-            Klicke zum Abspielen
+          <p className="text-muted-foreground mt-1">
+            Drück Play und schau dir meine Einladung an!
           </p>
         </div>
       </div>

@@ -2,57 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800;900&display=swap');
 
 @layer base {
   :root {
-    --background: 40 30% 97%;
-    --foreground: 30 20% 15%;
+    --background: 240 20% 98%;
+    --foreground: 240 10% 10%;
 
-    --card: 40 40% 98%;
-    --card-foreground: 30 20% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
 
-    --popover: 40 40% 98%;
-    --popover-foreground: 30 20% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
 
-    --primary: 38 70% 50%;
-    --primary-foreground: 40 30% 98%;
+    --primary: 0 90% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 340 40% 92%;
-    --secondary-foreground: 340 30% 30%;
+    --secondary: 280 85% 60%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 40 20% 92%;
-    --muted-foreground: 30 10% 45%;
+    --muted: 240 10% 92%;
+    --muted-foreground: 240 5% 45%;
 
-    --accent: 340 50% 65%;
-    --accent-foreground: 40 30% 98%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 40 30% 85%;
-    --input: 40 30% 85%;
-    --ring: 38 70% 50%;
+    --border: 240 10% 88%;
+    --input: 240 10% 88%;
+    --ring: 0 90% 55%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Custom celebration colors */
-    --gold: 38 70% 50%;
-    --gold-light: 40 60% 70%;
-    --gold-dark: 35 80% 40%;
-    --champagne: 40 40% 92%;
-    --rose: 340 50% 65%;
-    --rose-light: 340 60% 85%;
-    --cream: 40 30% 97%;
+    /* YouTube Influencer colors */
+    --youtube-red: 0 90% 55%;
+    --neon-pink: 320 100% 60%;
+    --electric-blue: 195 100% 50%;
+    --neon-green: 150 100% 45%;
+    --gaming-purple: 280 85% 60%;
+    --sunny-yellow: 45 100% 55%;
+    --dark-gaming: 240 20% 15%;
 
     /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(38 70% 50%), hsl(45 80% 60%));
-    --gradient-rose: linear-gradient(135deg, hsl(340 50% 65%), hsl(350 60% 75%));
-    --gradient-celebration: linear-gradient(180deg, hsl(40 30% 97%) 0%, hsl(340 60% 95%) 100%);
+    --gradient-youtube: linear-gradient(135deg, hsl(0 90% 55%), hsl(320 100% 60%));
+    --gradient-gaming: linear-gradient(135deg, hsl(280 85% 60%), hsl(195 100% 50%));
+    --gradient-fun: linear-gradient(180deg, hsl(240 20% 98%) 0%, hsl(280 60% 95%) 100%);
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(38 70% 50% / 0.15);
-    --shadow-glow: 0 0 30px hsl(38 70% 50% / 0.3);
+    --shadow-pop: 0 8px 30px -8px hsl(280 85% 60% / 0.4);
+    --shadow-glow: 0 0 40px hsl(0 90% 55% / 0.3);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -65,33 +65,33 @@
   }
 
   .dark {
-    --background: 30 20% 8%;
-    --foreground: 40 30% 95%;
+    --background: 240 20% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 30 20% 12%;
-    --card-foreground: 40 30% 95%;
+    --card: 240 20% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 30 20% 12%;
-    --popover-foreground: 40 30% 95%;
+    --popover: 240 20% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 38 70% 55%;
-    --primary-foreground: 30 20% 8%;
+    --primary: 0 90% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 340 30% 20%;
-    --secondary-foreground: 340 60% 85%;
+    --secondary: 280 85% 60%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 30 15% 18%;
-    --muted-foreground: 40 20% 60%;
+    --muted: 240 15% 18%;
+    --muted-foreground: 240 10% 60%;
 
-    --accent: 340 50% 55%;
-    --accent-foreground: 40 30% 95%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 15% 20%;
-    --input: 30 15% 20%;
-    --ring: 38 70% 55%;
+    --border: 240 15% 20%;
+    --input: 240 15% 20%;
+    --ring: 0 90% 55%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -111,48 +111,76 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Nunito', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 0.05em;
   }
 }
 
 @layer utilities {
-  .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(38 70% 50%), hsl(45 80% 60%));
+  .text-gradient-youtube {
+    background: linear-gradient(135deg, hsl(0 90% 55%), hsl(320 100% 60%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .bg-gradient-celebration {
-    background: linear-gradient(180deg, hsl(40 30% 97%) 0%, hsl(340 60% 95%) 100%);
+  .text-gradient-gaming {
+    background: linear-gradient(135deg, hsl(280 85% 60%), hsl(195 100% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .shimmer {
-    background: linear-gradient(
-      110deg,
-      transparent 25%,
-      hsl(38 70% 50% / 0.3) 50%,
-      transparent 75%
-    );
-    background-size: 200% 100%;
-    animation: shimmer 2s infinite;
+  .bg-gradient-fun {
+    background: linear-gradient(180deg, hsl(240 20% 98%) 0%, hsl(280 60% 95%) 100%);
   }
 
-  @keyframes shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+  .wiggle {
+    animation: wiggle 0.5s ease-in-out infinite;
   }
 
-  .float {
-    animation: float 3s ease-in-out infinite;
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
   }
 
-  @keyframes float {
+  .bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce-slow {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(0 90% 55% / 0.5); }
+    50% { box-shadow: 0 0 40px hsl(0 90% 55% / 0.8), 0 0 60px hsl(320 100% 60% / 0.4); }
+  }
+
+  .rainbow-border {
+    background: linear-gradient(90deg, 
+      hsl(0 90% 55%), 
+      hsl(45 100% 55%), 
+      hsl(150 100% 45%), 
+      hsl(195 100% 50%), 
+      hsl(280 85% 60%), 
+      hsl(320 100% 60%)
+    );
+    background-size: 300% 100%;
+    animation: rainbow-move 3s linear infinite;
+  }
+
+  @keyframes rainbow-move {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
   }
 }
