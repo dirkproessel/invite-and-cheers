@@ -1,10 +1,22 @@
 import { motion } from "framer-motion";
 import { Play, Pause, Crown } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
-const VideoGreeting = () => {
+interface VideoGreetingProps {
+  videoUrl: string;
+}
+
+const VideoGreeting = ({ videoUrl }: VideoGreetingProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Reset video when url changes
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+      setIsPlaying(false);
+    }
+  }, [videoUrl]);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -43,7 +55,7 @@ const VideoGreeting = () => {
             poster=""
             onEnded={() => setIsPlaying(false)}
           >
-            <source src="" type="video/mp4" />
+            <source src={videoUrl} type="video/mp4" />
           </video>
           
           {/* Play button - Greek style */}

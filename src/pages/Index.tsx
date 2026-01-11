@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
+import { useParams } from "react-router-dom";
 import HeroSection from "@/components/HeroSection";
 import VideoGreeting from "@/components/VideoGreeting";
 import EventDetails from "@/components/EventDetails";
 import RSVPButtons from "@/components/RSVPButtons";
 import Confetti from "@/components/Confetti";
 import { Crown, Sparkles, Heart } from "lucide-react";
+import { INVITEES, DEFAULT_INVITEE } from "@/config/invitees";
 
 const Index = () => {
+  const { slug } = useParams();
+  const invitee = slug && INVITEES[slug.toLowerCase()] ? INVITEES[slug.toLowerCase()] : DEFAULT_INVITEE;
+
   return (
     <div className="min-h-screen bg-gradient-sky">
       <Confetti />
@@ -26,11 +31,11 @@ const Index = () => {
           >
             <Sparkles className="w-8 h-8 text-primary float-gentle" />
             <h2 className="text-4xl text-center text-foreground tracking-wider">
-              GÖTTLICHE BOTSCHAFT
+              {invitee.name !== DEFAULT_INVITEE.name ? `HALLO ${invitee.name.toUpperCase()}!` : "GÖTTLICHE BOTSCHAFT"}
             </h2>
             <Sparkles className="w-8 h-8 text-primary float-gentle" />
           </motion.div>
-          <VideoGreeting />
+          <VideoGreeting videoUrl={invitee.videoUrl} />
         </section>
         
         {/* Event Details */}
@@ -43,7 +48,7 @@ const Index = () => {
           <div className="relative">
             <div className="absolute -inset-2 golden-border rounded-2xl opacity-25 blur-md" />
             <div className="relative bg-card/90 backdrop-blur-sm rounded-2xl p-8 border-2 border-primary/30 shadow-golden">
-              <RSVPButtons />
+              <RSVPButtons inviteeName={invitee.name} />
             </div>
           </div>
         </section>

@@ -1,22 +1,37 @@
 import { motion } from "framer-motion";
 import { ThumbsUp, ThumbsDown, Trophy, Heart, Crown } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
 
-const RSVPButtons = () => {
+interface RSVPButtonsProps {
+  inviteeName: string;
+}
+
+const RSVPButtons = ({ inviteeName }: RSVPButtonsProps) => {
   const [responded, setResponded] = useState<"yes" | "no" | null>(null);
+
+  useEffect(() => {
+    const savedResponse = localStorage.getItem(`rsvp_status_${inviteeName}`);
+    if (savedResponse === "yes" || savedResponse === "no") {
+      setResponded(savedResponse);
+    } else {
+      setResponded(null); // Reset if switching between users without response
+    }
+  }, [inviteeName]);
 
   const handleRSVP = (response: "yes" | "no") => {
     setResponded(response);
+    localStorage.setItem(`rsvp_status_${inviteeName}`, response);
     
     if (response === "yes") {
       emailjs.send(
         "service_1f67z2h",
         "template_bbvhvw8",
         {
-          message: "Ich bin dabei! Die Götter freuen sich! ⚡🏆",
+          message: `Ich bin dabei! Die Götter freuen sich! ⚡🏆`,
+          from_name: inviteeName,
           to_email: "dirk.proessel@web.de",
         },
         "VdZgO-6DXQUn0qOkU"
