@@ -8,56 +8,64 @@ interface ConfettiPiece {
   duration: number;
   color: string;
   size: number;
-  shape: "square" | "circle" | "star";
+  shape: "laurel" | "star" | "lightning" | "circle";
 }
 
 const Confetti = () => {
   const pieces = useMemo<ConfettiPiece[]>(() => {
     const colors = [
-      "hsl(0 90% 55%)",      // YouTube red
-      "hsl(320 100% 60%)",   // Neon pink
-      "hsl(195 100% 50%)",   // Electric blue
-      "hsl(280 85% 60%)",    // Gaming purple
-      "hsl(45 100% 55%)",    // Sunny yellow
-      "hsl(150 100% 45%)",   // Neon green
+      "hsl(45 85% 50%)",     // Olympian gold
+      "hsl(45 80% 65%)",     // Light gold
+      "hsl(30 60% 45%)",     // Bronze
+      "hsl(215 70% 45%)",    // Royal blue
+      "hsl(120 35% 40%)",    // Laurel green
+      "hsl(280 50% 50%)",    // Accent purple
     ];
     
-    const shapes: ("square" | "circle" | "star")[] = ["square", "circle", "star"];
+    const shapes: ("laurel" | "star" | "lightning" | "circle")[] = ["laurel", "star", "lightning", "circle"];
     
-    return Array.from({ length: 40 }, (_, i) => ({
+    return Array.from({ length: 35 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
-      delay: Math.random() * 4,
-      duration: 2 + Math.random() * 3,
+      delay: Math.random() * 5,
+      duration: 3 + Math.random() * 4,
       color: colors[Math.floor(Math.random() * colors.length)],
-      size: 8 + Math.random() * 12,
+      size: 10 + Math.random() * 14,
       shape: shapes[Math.floor(Math.random() * shapes.length)],
     }));
   }, []);
+
+  const getShapePath = (shape: string) => {
+    switch (shape) {
+      case "laurel":
+        return "ellipse(40% 50% at 50% 50%)";
+      case "star":
+        return "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
+      case "lightning":
+        return "polygon(50% 0%, 70% 35%, 55% 35%, 75% 100%, 30% 55%, 45% 55%, 25% 0%)";
+      default:
+        return "circle(50% at 50% 50%)";
+    }
+  };
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-50">
       {pieces.map((piece) => (
         <motion.div
           key={piece.id}
-          className={piece.shape === "circle" ? "rounded-full" : piece.shape === "star" ? "" : ""}
           style={{
             position: "absolute",
             left: `${piece.x}%`,
             top: -30,
             width: piece.size,
             height: piece.size,
-            backgroundColor: piece.shape !== "star" ? piece.color : "transparent",
-            borderRadius: piece.shape === "circle" ? "50%" : piece.shape === "square" ? "2px" : "0",
-            clipPath: piece.shape === "star" 
-              ? "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"
-              : "none",
-            background: piece.shape === "star" ? piece.color : undefined,
+            backgroundColor: piece.color,
+            clipPath: getShapePath(piece.shape),
           }}
-          initial={{ y: -30, rotate: 0, opacity: 1 }}
+          initial={{ y: -30, rotate: 0, opacity: 0.9 }}
           animate={{
             y: "100vh",
-            rotate: 720,
+            rotate: 540,
             opacity: 0,
           }}
           transition={{
@@ -65,7 +73,7 @@ const Confetti = () => {
             delay: piece.delay,
             ease: "easeOut",
             repeat: Infinity,
-            repeatDelay: 1,
+            repeatDelay: 2,
           }}
         />
       ))}

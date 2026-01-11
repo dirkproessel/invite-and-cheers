@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, Clock, MapPin, Cake } from "lucide-react";
+import { Calendar, Clock, MapPin, Crown } from "lucide-react";
 
 const EventDetails = () => {
   const details = [
@@ -30,16 +30,16 @@ const EventDetails = () => {
       transition={{ duration: 0.6, delay: 0.5 }}
       className="w-full max-w-xl mx-auto"
     >
-      {/* Rainbow border effect */}
-      <div className="absolute -inset-1 rainbow-border rounded-3xl opacity-50 blur-sm" />
+      {/* Golden border effect */}
+      <div className="absolute -inset-1 golden-border rounded-2xl opacity-40 blur-sm" />
       
-      <div className="relative bg-card rounded-3xl p-6 sm:p-8 border-4 border-electric-blue/50 shadow-pop">
-        <div className="flex items-center justify-center gap-3 mb-6">
-          <Cake className="w-8 h-8 text-primary wiggle" />
-          <h3 className="text-3xl text-center text-foreground">
-            PARTY DETAILS
+      <div className="relative bg-gradient-marble rounded-2xl p-6 sm:p-8 border-2 border-primary/40 shadow-golden">
+        <div className="flex items-center justify-center gap-3 mb-8">
+          <Crown className="w-8 h-8 text-primary float-gentle" />
+          <h3 className="text-3xl text-center text-foreground tracking-wider">
+            DIE FEIERLICHKEITEN
           </h3>
-          <Cake className="w-8 h-8 text-primary wiggle" />
+          <Crown className="w-8 h-8 text-primary float-gentle" />
         </div>
         
         <div className="space-y-4">
@@ -48,25 +48,34 @@ const EventDetails = () => {
               key={item.label}
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
-              className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-secondary/20 to-accent/20 hover:from-secondary/30 hover:to-accent/30 transition-all border-2 border-transparent hover:border-gaming-purple/30"
+              transition={{ duration: 0.4, delay: 0.6 + index * 0.15 }}
+              className="flex items-center gap-4 p-5 rounded-xl bg-card/80 hover:bg-card transition-all border border-primary/20 hover:border-primary/40 hover:shadow-elegant"
             >
               <motion.div 
-                className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-neon-pink flex items-center justify-center flex-shrink-0 shadow-lg"
-                whileHover={{ rotate: 10, scale: 1.1 }}
+                className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary to-bronze flex items-center justify-center flex-shrink-0 shadow-golden"
+                whileHover={{ rotate: 5, scale: 1.05 }}
               >
                 <item.icon className="w-7 h-7 text-primary-foreground" />
               </motion.div>
               <div className="flex-1">
-                <p className="text-sm text-gaming-purple font-bold tracking-wider">
+                <p className="text-sm text-secondary font-display font-bold tracking-widest">
                   {item.emoji} {item.label}
                 </p>
-                <p className="text-foreground font-bold text-lg">
+                <p className="text-foreground font-semibold text-lg font-body">
                   {item.value}
                 </p>
               </div>
             </motion.div>
           ))}
+        </div>
+        
+        {/* Decorative Greek pattern */}
+        <div className="mt-8 flex justify-center gap-2 text-primary/60">
+          <span>🏛️</span>
+          <span className="tracking-widest">• • •</span>
+          <span>⚡</span>
+          <span className="tracking-widest">• • •</span>
+          <span>🏛️</span>
         </div>
       </div>
     </motion.div>
