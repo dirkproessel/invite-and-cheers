@@ -3,6 +3,7 @@ import { ThumbsUp, ThumbsDown, Trophy, Heart, Crown } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const RSVPButtons = () => {
   const [responded, setResponded] = useState<"yes" | "no" | null>(null);
@@ -11,6 +12,28 @@ const RSVPButtons = () => {
     setResponded(response);
     
     if (response === "yes") {
+      emailjs.send(
+        "service_1f67z2h",
+        "template_bbvhvw8",
+        {
+          message: "Ich bin dabei! Die Götter freuen sich! ⚡🏆",
+          to_email: "dirk.proessel@web.de",
+        },
+        "VdZgO-6DXQUn0qOkU"
+      ).then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error);
+          toast({
+            title: "Fehler beim Senden",
+            description: "Die Nachricht konnte nicht gesendet werden.",
+            variant: "destructive",
+          });
+        }
+      );
+
       toast({
         title: "Heldenhaft! ⚡🏆",
         description: "Du bist dabei! Die Götter freuen sich!",
