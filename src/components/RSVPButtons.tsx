@@ -25,30 +25,34 @@ const RSVPButtons = ({ inviteeName }: RSVPButtonsProps) => {
     setResponded(response);
     localStorage.setItem(`rsvp_status_${inviteeName}`, response);
     
-    if (response === "yes") {
-      emailjs.send(
-        "service_1f67z2h",
-        "template_bbvhvw8",
-        {
-          message: `Ich bin dabei! Die Götter freuen sich! ⚡🏆`,
-          from_name: inviteeName,
-          to_email: "dirk.proessel@web.de",
-        },
-        "VdZgO-6DXQUn0qOkU"
-      ).then(
-        () => {
-          console.log("SUCCESS!");
-        },
-        (error) => {
-          console.log("FAILED...", error);
-          toast({
-            title: "Fehler beim Senden",
-            description: "Die Nachricht konnte nicht gesendet werden.",
-            variant: "destructive",
-          });
-        }
-      );
+    const message = response === "yes"
+      ? "Ich bin dabei! Die Götter freuen sich! ⚡🏆"
+      : "Schade, ich kann leider nicht kommen. 😢";
 
+    emailjs.send(
+      "service_1f67z2h",
+      "template_bbvhvw8",
+      {
+        message: message,
+        from_name: inviteeName,
+        to_email: "dirk.proessel@web.de",
+      },
+      "VdZgO-6DXQUn0qOkU"
+    ).then(
+      () => {
+        console.log("SUCCESS!");
+      },
+      (error) => {
+        console.log("FAILED...", error);
+        toast({
+          title: "Fehler beim Senden",
+          description: "Die Nachricht konnte nicht gesendet werden.",
+          variant: "destructive",
+        });
+      }
+    );
+
+    if (response === "yes") {
       toast({
         title: "Heldenhaft! ⚡🏆",
         description: "Du bist dabei! Die Götter freuen sich!",
