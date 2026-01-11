@@ -16,7 +16,7 @@ const HeroSection = () => {
       </div>
       
       {/* Animated emojis */}
-      {["🎮", "🎬", "⭐", "🎉", "🔥", "💜"].map((emoji, i) => (
+      {["⚡", "🏛️", "🦅", "🎉", "🔱", "🏆"].map((emoji, i) => (
         <motion.div
           key={i}
           className="absolute text-4xl md:text-5xl"
@@ -47,9 +47,9 @@ const HeroSection = () => {
           transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
           className="mb-6 flex items-center justify-center gap-3"
         >
-          <Youtube className="w-12 h-12 text-primary" />
+          <span className="text-5xl">🏛️</span>
           <span className="text-5xl">🎂</span>
-          <Youtube className="w-12 h-12 text-primary" />
+          <span className="text-5xl">⚡</span>
         </motion.div>
         
         <motion.p
@@ -69,7 +69,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-6xl sm:text-7xl md:text-8xl font-bold text-gradient-youtube mb-4 drop-shadow-lg"
         >
-          LEONS
+          RICHARDS
         </motion.h1>
         
         <motion.div
@@ -79,7 +79,7 @@ const HeroSection = () => {
           className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-2xl shadow-glow mb-6"
         >
           <span className="text-4xl sm:text-5xl font-bold">
-            8. GEBURTSTAG! 🎉
+            GEBURTSTAG! 🎉
           </span>
         </motion.div>
         
@@ -89,7 +89,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="text-xl md:text-2xl text-foreground max-w-lg mx-auto font-semibold"
         >
-          Gaming 🎮 • Spaß 🎉 • Kuchen 🎂 • Freunde 💜
+          Olympische Götter 🏛️ • Helden ⚡ • Kuchen 🎂 • Abenteuer 🏆
         </motion.p>
         
         <motion.p
