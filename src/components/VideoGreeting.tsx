@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Play, Pause, Youtube } from "lucide-react";
+import { Play, Pause, Crown } from "lucide-react";
 import { useState, useRef } from "react";
 
 const VideoGreeting = () => {
@@ -24,18 +24,19 @@ const VideoGreeting = () => {
       transition={{ duration: 0.8, delay: 0.4 }}
       className="relative w-full max-w-2xl mx-auto"
     >
-      {/* Rainbow border effect */}
-      <div className="absolute -inset-1 rainbow-border rounded-3xl opacity-75 blur-sm" />
+      {/* Golden border effect */}
+      <div className="absolute -inset-1 golden-border rounded-2xl opacity-75 blur-sm" />
       
-      <div className="relative rounded-2xl overflow-hidden bg-card border-4 border-gaming-purple/50 shadow-pop">
-        {/* YouTube-style top bar */}
-        <div className="bg-primary px-4 py-2 flex items-center gap-2">
-          <Youtube className="w-6 h-6 text-primary-foreground" />
-          <span className="font-bold text-primary-foreground text-sm">EXKLUSIVES VIDEO!</span>
+      <div className="relative rounded-xl overflow-hidden bg-card border-2 border-primary/40 shadow-golden">
+        {/* Greek-style top bar */}
+        <div className="bg-gradient-to-r from-primary via-olympian-gold-light to-primary px-4 py-3 flex items-center justify-center gap-3">
+          <Crown className="w-5 h-5 text-primary-foreground" />
+          <span className="font-display font-bold text-primary-foreground text-sm tracking-widest uppercase">Göttliche Botschaft</span>
+          <Crown className="w-5 h-5 text-primary-foreground" />
         </div>
         
         {/* Video area */}
-        <div className="relative aspect-video bg-gradient-to-br from-gaming-purple to-electric-blue flex items-center justify-center">
+        <div className="relative aspect-video bg-gradient-to-br from-royal-blue via-secondary to-accent flex items-center justify-center">
           <video
             ref={videoRef}
             className="absolute inset-0 w-full h-full object-cover"
@@ -45,12 +46,12 @@ const VideoGreeting = () => {
             <source src="" type="video/mp4" />
           </video>
           
-          {/* Play button - YouTube style */}
+          {/* Play button - Greek style */}
           <motion.button
             onClick={togglePlay}
-            whileHover={{ scale: 1.15 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="relative z-20 w-24 h-24 rounded-2xl bg-primary flex items-center justify-center shadow-glow pulse-glow transition-all"
+            className="relative z-20 w-24 h-24 rounded-full bg-gradient-to-br from-primary to-bronze flex items-center justify-center shadow-golden shimmer-gold transition-all border-4 border-primary/30"
           >
             {isPlaying ? (
               <Pause className="w-10 h-10 text-primary-foreground" />
@@ -59,44 +60,44 @@ const VideoGreeting = () => {
             )}
           </motion.button>
           
-          {/* Decorative emojis */}
+          {/* Decorative Greek symbols */}
           <motion.span 
             className="absolute top-4 left-4 text-4xl"
-            animate={{ rotate: [-10, 10, -10] }}
-            transition={{ duration: 1, repeat: Infinity }}
+            animate={{ rotate: [-5, 5, -5] }}
+            transition={{ duration: 2, repeat: Infinity }}
           >
-            🎮
+            🏛️
           </motion.span>
           <motion.span 
             className="absolute top-4 right-4 text-4xl"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 0.8, repeat: Infinity }}
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
           >
-            🎬
+            ⚡
           </motion.span>
           <motion.span 
             className="absolute bottom-4 left-4 text-4xl"
-            animate={{ scale: [1, 1.2, 1] }}
-            transition={{ duration: 1.2, repeat: Infinity }}
+            animate={{ scale: [1, 1.15, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
           >
-            ⭐
+            🏆
           </motion.span>
           <motion.span 
             className="absolute bottom-4 right-4 text-4xl"
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            animate={{ rotate: [0, 10, -10, 0] }}
+            transition={{ duration: 3, repeat: Infinity }}
           >
-            🎉
+            🦅
           </motion.span>
         </div>
         
         {/* Caption */}
-        <div className="p-4 text-center bg-card">
-          <p className="font-bold text-xl text-foreground">
-            🎬 Meine Video-Nachricht an DICH! 🎬
+        <div className="p-5 text-center bg-gradient-marble">
+          <p className="font-display font-bold text-xl text-foreground tracking-wide">
+            ⚡ Eine Nachricht vom Olymp! ⚡
           </p>
-          <p className="text-muted-foreground mt-1">
-            Drück Play und schau dir meine Einladung an!
+          <p className="text-muted-foreground mt-2 font-body text-lg">
+            Drück Play und empfange die göttliche Einladung
           </p>
         </div>
       </div>

@@ -4,11 +4,11 @@ import VideoGreeting from "@/components/VideoGreeting";
 import EventDetails from "@/components/EventDetails";
 import RSVPButtons from "@/components/RSVPButtons";
 import Confetti from "@/components/Confetti";
-import { Youtube, Bell, Heart } from "lucide-react";
+import { Crown, Sparkles, Heart } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-fun">
+    <div className="min-h-screen bg-gradient-sky">
       <Confetti />
       
       {/* Hero Section */}
@@ -24,11 +24,11 @@ const Index = () => {
             viewport={{ once: true }}
             className="flex items-center justify-center gap-3 mb-8"
           >
-            <Bell className="w-8 h-8 text-sunny wiggle" />
-            <h2 className="text-4xl text-center text-foreground">
-              SCHAU DIR DAS AN!
+            <Sparkles className="w-8 h-8 text-primary float-gentle" />
+            <h2 className="text-4xl text-center text-foreground tracking-wider">
+              GÖTTLICHE BOTSCHAFT
             </h2>
-            <Bell className="w-8 h-8 text-sunny wiggle" />
+            <Sparkles className="w-8 h-8 text-primary float-gentle" />
           </motion.div>
           <VideoGreeting />
         </section>
@@ -41,8 +41,8 @@ const Index = () => {
         {/* RSVP Section */}
         <section className="max-w-2xl mx-auto">
           <div className="relative">
-            <div className="absolute -inset-2 rainbow-border rounded-3xl opacity-30 blur-md" />
-            <div className="relative bg-card/80 backdrop-blur-sm rounded-3xl p-8 border-4 border-neon-pink/30 shadow-pop">
+            <div className="absolute -inset-2 golden-border rounded-2xl opacity-25 blur-md" />
+            <div className="relative bg-card/90 backdrop-blur-sm rounded-2xl p-8 border-2 border-primary/30 shadow-golden">
               <RSVPButtons />
             </div>
           </div>
@@ -54,16 +54,25 @@ const Index = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center gap-2 text-muted-foreground"
+            className="flex items-center justify-center gap-2 text-muted-foreground font-body"
           >
-            <Youtube className="w-5 h-5 text-primary" />
-            <span>Made with</span>
-            <Heart className="w-5 h-5 text-neon-pink fill-neon-pink" />
-            <span>für die coolste Party!</span>
+            <Crown className="w-5 h-5 text-primary" />
+            <span>Erstellt mit</span>
+            <Heart className="w-5 h-5 text-accent fill-accent" />
+            <span>für ein göttliches Fest!</span>
           </motion.div>
-          <p className="text-sm text-muted-foreground/60 mt-3">
-            Fragen? Schreib an: leon@beispiel.de 📧
+          <p className="text-sm text-muted-foreground/60 mt-3 font-body">
+            Fragen? Schreib an: richard@beispiel.de 📧
           </p>
+          
+          {/* Greek decorative element */}
+          <div className="mt-6 flex justify-center gap-3 text-primary/40 text-2xl">
+            <span>🏛️</span>
+            <span>⚡</span>
+            <span>🦅</span>
+            <span>🔱</span>
+            <span>🏆</span>
+          </div>
         </footer>
       </main>
     </div>
