@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
-import { Calendar, Clock, MapPin, Shirt, Cake } from "lucide-react";
+import { Calendar, Clock, MapPin, Cake } from "lucide-react";
 
 const EventDetails = () => {
   const details = [
     {
       icon: Calendar,
       label: "WANN",
-      value: "Samstag, 15. Februar 2025",
+      value: "Donnerstag, 05. März 2026",
       emoji: "📅",
     },
     {
       icon: Clock,
       label: "UHRZEIT",
-      value: "Ab 14:00 Uhr",
+      value: "Ab 13:00 Uhr",
       emoji: "⏰",
     },
     {
@@ -20,12 +20,6 @@ const EventDetails = () => {
       label: "WO",
       value: "Musterstraße 123, 12345 Berlin",
       emoji: "📍",
-    },
-    {
-      icon: Shirt,
-      label: "DRESSCODE",
-      value: "Komm als dein Lieblings-YouTuber! 🌟",
-      emoji: "👕",
     },
   ];
 
