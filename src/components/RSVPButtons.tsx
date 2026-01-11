@@ -11,6 +11,11 @@ const RSVPButtons = () => {
     setResponded(response);
     
     if (response === "yes") {
+      const email = "dirk.proessel@web.de";
+      const subject = encodeURIComponent("Zusage zur göttlichen Feier");
+      const body = encodeURIComponent("Ich bin dabei! Die Götter freuen sich! ⚡🏆");
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+
       toast({
         title: "Heldenhaft! ⚡🏆",
         description: "Du bist dabei! Die Götter freuen sich!",
