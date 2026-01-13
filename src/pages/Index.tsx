@@ -5,7 +5,7 @@ import VideoGreeting from "@/components/VideoGreeting";
 import EventDetails from "@/components/EventDetails";
 import RSVPButtons from "@/components/RSVPButtons";
 import Confetti from "@/components/Confetti";
-import { Crown, Sparkles, Heart } from "lucide-react";
+import { Mountain, Sparkles, Heart } from "lucide-react";
 import { INVITEES, DEFAULT_INVITEE } from "@/config/invitees";
 
 const Index = () => {
@@ -31,7 +31,7 @@ const Index = () => {
           >
             <Sparkles className="w-8 h-8 text-primary float-gentle" />
             <h2 className="text-4xl text-center text-foreground tracking-wider">
-              {invitee.name !== DEFAULT_INVITEE.name ? `HALLO ${invitee.name.toUpperCase()}!` : "GÖTTLICHE BOTSCHAFT"}
+              {invitee.name !== DEFAULT_INVITEE.name ? `HALLO ${invitee.name.toUpperCase()}!` : "KLETTER-NACHRICHT"}
             </h2>
             <Sparkles className="w-8 h-8 text-primary float-gentle" />
           </motion.div>
@@ -46,8 +46,8 @@ const Index = () => {
         {/* RSVP Section */}
         <section className="max-w-2xl mx-auto">
           <div className="relative">
-            <div className="absolute -inset-2 golden-border rounded-2xl opacity-25 blur-md" />
-            <div className="relative bg-card/90 backdrop-blur-sm rounded-2xl p-8 border-2 border-primary/30 shadow-golden">
+            <div className="absolute -inset-2 adventure-border rounded-2xl opacity-25 blur-md" />
+            <div className="relative bg-card/90 backdrop-blur-sm rounded-2xl p-8 border-2 border-primary/30 shadow-adventure">
               <RSVPButtons inviteeName={invitee.name} />
             </div>
           </div>
@@ -61,22 +61,22 @@ const Index = () => {
             viewport={{ once: true }}
             className="flex items-center justify-center gap-2 text-muted-foreground font-body"
           >
-            <Crown className="w-5 h-5 text-primary" />
+            <Mountain className="w-5 h-5 text-primary" />
             <span>Erstellt mit</span>
             <Heart className="w-5 h-5 text-accent fill-accent" />
-            <span>für ein göttliches Fest!</span>
+            <span>für ein tolles Kletter-Abenteuer!</span>
           </motion.div>
           <p className="text-sm text-muted-foreground/60 mt-3 font-body">
             Fragen? Schreib an: richard@beispiel.de 📧
           </p>
           
-          {/* Greek decorative element */}
+          {/* Climbing decorative element */}
           <div className="mt-6 flex justify-center gap-3 text-primary/40 text-2xl">
-            <span>🏛️</span>
-            <span>⚡</span>
-            <span>🦅</span>
-            <span>🔱</span>
-            <span>🏆</span>
+            <span>🧗</span>
+            <span>⛰️</span>
+            <span>🪢</span>
+            <span>🎈</span>
+            <span>🏔️</span>
           </div>
         </footer>
       </main>

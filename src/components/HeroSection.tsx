@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import heroImage from "@/assets/birthday-hero.jpg";
-import { Sparkles, Crown } from "lucide-react";
+import { Mountain, Sparkles } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -9,14 +9,14 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Olympische Götter Party Hintergrund"
+          alt="Kletter-Party Hintergrund"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />
       </div>
       
-      {/* Animated Greek symbols */}
-      {["⚡", "🏛️", "🦅", "🌿", "🔱", "🏆"].map((emoji, i) => (
+      {/* Animated climbing symbols */}
+      {["🧗", "🪢", "🎈", "⛰️", "🎉", "🏔️"].map((emoji, i) => (
         <motion.div
           key={i}
           className="absolute text-4xl md:text-5xl"
@@ -47,9 +47,9 @@ const HeroSection = () => {
           transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
           className="mb-6 flex items-center justify-center gap-4"
         >
-          <span className="text-5xl">🏛️</span>
-          <Crown className="w-14 h-14 text-primary drop-shadow-lg" />
-          <span className="text-5xl">⚡</span>
+          <span className="text-5xl">🧗</span>
+          <Mountain className="w-14 h-14 text-primary drop-shadow-lg" />
+          <span className="text-5xl">🪢</span>
         </motion.div>
         
         <motion.p
@@ -67,7 +67,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-6xl sm:text-7xl md:text-8xl font-bold text-gradient-gold mb-4 drop-shadow-lg tracking-wider"
+          className="text-6xl sm:text-7xl md:text-8xl font-bold text-gradient-adventure mb-4 drop-shadow-lg tracking-wider"
         >
           RICHARDS
         </motion.h1>
@@ -76,7 +76,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.5, type: "spring" }}
-          className="inline-block bg-gradient-to-r from-primary via-olympian-gold-light to-primary text-primary-foreground px-10 py-5 rounded-xl shadow-golden shimmer-gold mb-6 border-2 border-primary/30"
+          className="inline-block bg-gradient-to-r from-primary via-climbing-orange-light to-primary text-primary-foreground px-10 py-5 rounded-xl shadow-adventure shimmer-orange mb-6 border-2 border-primary/30"
         >
           <span className="text-4xl sm:text-5xl font-bold tracking-wide">
             GEBURTSTAG! 🎉
@@ -90,7 +90,7 @@ const HeroSection = () => {
           className="mt-6"
         >
           <p className="text-2xl md:text-3xl text-foreground font-semibold tracking-wide">
-            ✨ Olympische Götter und Helden ✨
+            🧗 Klettern im Klettermax 🧗
           </p>
         </motion.div>
         
@@ -100,7 +100,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="mt-4 text-lg text-muted-foreground italic"
         >
-          Ein episches Abenteuer erwartet dich!
+          Ein spannendes Kletter-Abenteuer erwartet dich!
         </motion.p>
       </div>
     </div>
