@@ -57,22 +57,22 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        olympian: {
-          gold: "hsl(var(--olympian-gold))",
-          "gold-light": "hsl(var(--olympian-gold-light))",
+        climbing: {
+          orange: "hsl(var(--climbing-orange))",
+          "orange-light": "hsl(var(--climbing-orange-light))",
         },
-        royal: {
-          blue: "hsl(var(--royal-blue))",
+        rope: {
+          brown: "hsl(var(--rope-brown))",
         },
-        marble: {
-          white: "hsl(var(--marble-white))",
+        rock: {
+          gray: "hsl(var(--rock-gray))",
+          dark: "hsl(var(--rock-dark))",
         },
-        bronze: "hsl(var(--bronze))",
-        laurel: "hsl(var(--laurel-green))",
         sky: {
           blue: "hsl(var(--sky-blue))",
         },
-        cloud: "hsl(var(--cloud-white))",
+        forest: "hsl(var(--forest-green))",
+        chalk: "hsl(var(--chalk-white))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,11 +80,11 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        display: ["'Cinzel'", "serif"],
-        body: ["'Cormorant Garamond'", "serif"],
+        display: ["'Bebas Neue'", "sans-serif"],
+        body: ["'Nunito'", "sans-serif"],
       },
       boxShadow: {
-        golden: "var(--shadow-golden)",
+        adventure: "var(--shadow-adventure)",
         elegant: "var(--shadow-elegant)",
       },
       keyframes: {

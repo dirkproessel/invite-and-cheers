@@ -2,58 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 45 30% 97%;
-    --foreground: 220 30% 15%;
+    --background: 30 15% 96%;
+    --foreground: 220 20% 20%;
 
-    --card: 45 40% 98%;
-    --card-foreground: 220 30% 15%;
+    --card: 30 20% 98%;
+    --card-foreground: 220 20% 20%;
 
-    --popover: 45 40% 98%;
-    --popover-foreground: 220 30% 15%;
+    --popover: 30 20% 98%;
+    --popover-foreground: 220 20% 20%;
 
-    --primary: 45 85% 50%;
-    --primary-foreground: 220 30% 10%;
+    --primary: 25 95% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 70% 45%;
+    --secondary: 200 70% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 45 20% 90%;
-    --muted-foreground: 220 15% 40%;
+    --muted: 30 15% 88%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 280 50% 50%;
+    --accent: 150 60% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 45 30% 85%;
-    --input: 45 30% 85%;
-    --ring: 45 85% 50%;
+    --border: 30 20% 82%;
+    --input: 30 20% 82%;
+    --ring: 25 95% 55%;
 
     --radius: 1rem;
 
-    /* Olympian colors */
-    --olympian-gold: 45 85% 50%;
-    --olympian-gold-light: 45 80% 65%;
-    --royal-blue: 215 70% 45%;
-    --marble-white: 45 30% 97%;
-    --bronze: 30 60% 45%;
-    --laurel-green: 120 35% 40%;
-    --sky-blue: 200 80% 70%;
-    --cloud-white: 45 20% 95%;
+    /* Climbing colors */
+    --climbing-orange: 25 95% 55%;
+    --climbing-orange-light: 30 90% 65%;
+    --rope-brown: 30 45% 35%;
+    --rock-gray: 30 10% 55%;
+    --rock-dark: 25 15% 30%;
+    --sky-blue: 200 70% 50%;
+    --forest-green: 150 60% 45%;
+    --chalk-white: 30 15% 96%;
 
     /* Gradients */
-    --gradient-olympian: linear-gradient(135deg, hsl(45 85% 50%), hsl(30 60% 45%));
-    --gradient-sky: linear-gradient(180deg, hsl(200 80% 70%) 0%, hsl(45 30% 97%) 100%);
-    --gradient-marble: linear-gradient(180deg, hsl(45 40% 98%) 0%, hsl(45 20% 90%) 100%);
+    --gradient-adventure: linear-gradient(135deg, hsl(25 95% 55%), hsl(30 45% 35%));
+    --gradient-sky: linear-gradient(180deg, hsl(200 80% 75%) 0%, hsl(30 15% 96%) 100%);
+    --gradient-rock: linear-gradient(180deg, hsl(30 20% 98%) 0%, hsl(30 15% 88%) 100%);
 
     /* Shadows */
-    --shadow-golden: 0 8px 30px -8px hsl(45 85% 50% / 0.4);
-    --shadow-elegant: 0 4px 20px hsl(220 30% 15% / 0.1);
+    --shadow-adventure: 0 8px 30px -8px hsl(25 95% 55% / 0.4);
+    --shadow-elegant: 0 4px 20px hsl(220 20% 20% / 0.1);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -66,33 +66,33 @@
   }
 
   .dark {
-    --background: 220 25% 10%;
-    --foreground: 45 30% 95%;
+    --background: 25 15% 12%;
+    --foreground: 30 15% 95%;
 
-    --card: 220 25% 15%;
-    --card-foreground: 45 30% 95%;
+    --card: 25 15% 18%;
+    --card-foreground: 30 15% 95%;
 
-    --popover: 220 25% 15%;
-    --popover-foreground: 45 30% 95%;
+    --popover: 25 15% 18%;
+    --popover-foreground: 30 15% 95%;
 
-    --primary: 45 85% 55%;
-    --primary-foreground: 220 30% 10%;
+    --primary: 25 95% 58%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 70% 50%;
+    --secondary: 200 70% 55%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 20% 20%;
-    --muted-foreground: 45 20% 60%;
+    --muted: 25 15% 25%;
+    --muted-foreground: 30 15% 65%;
 
-    --accent: 280 50% 55%;
+    --accent: 150 60% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 25%;
-    --input: 220 20% 25%;
-    --ring: 45 85% 55%;
+    --border: 25 15% 28%;
+    --input: 25 15% 28%;
+    --ring: 25 95% 58%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -112,49 +112,49 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Nunito', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cinzel', serif;
-    letter-spacing: 0.08em;
-    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+    font-weight: 400;
   }
 }
 
 @layer utilities {
-  .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(45 85% 55%), hsl(30 70% 50%), hsl(45 85% 60%));
+  .text-gradient-adventure {
+    background: linear-gradient(135deg, hsl(25 95% 55%), hsl(30 45% 35%), hsl(25 95% 60%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .text-gradient-olympian {
-    background: linear-gradient(135deg, hsl(215 70% 45%), hsl(280 50% 50%));
+  .text-gradient-sky {
+    background: linear-gradient(135deg, hsl(200 70% 50%), hsl(150 60% 45%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-gradient-sky {
-    background: linear-gradient(180deg, hsl(200 80% 85%) 0%, hsl(45 30% 97%) 100%);
+    background: linear-gradient(180deg, hsl(200 80% 85%) 0%, hsl(30 15% 96%) 100%);
   }
 
-  .bg-gradient-marble {
-    background: linear-gradient(180deg, hsl(45 40% 98%) 0%, hsl(45 20% 92%) 100%);
+  .bg-gradient-rock {
+    background: linear-gradient(180deg, hsl(30 20% 98%) 0%, hsl(30 15% 90%) 100%);
   }
 
-  .shimmer-gold {
-    animation: shimmer-gold 3s ease-in-out infinite;
+  .shimmer-orange {
+    animation: shimmer-orange 3s ease-in-out infinite;
   }
 
-  @keyframes shimmer-gold {
+  @keyframes shimmer-orange {
     0%, 100% { 
-      box-shadow: 0 0 20px hsl(45 85% 50% / 0.3);
+      box-shadow: 0 0 20px hsl(25 95% 55% / 0.3);
     }
     50% { 
-      box-shadow: 0 0 40px hsl(45 85% 50% / 0.6), 0 0 60px hsl(45 85% 60% / 0.3);
+      box-shadow: 0 0 40px hsl(25 95% 55% / 0.6), 0 0 60px hsl(30 90% 65% / 0.3);
     }
   }
 
@@ -167,33 +167,43 @@
     50% { transform: translateY(-10px); }
   }
 
-  .rotate-slow {
-    animation: rotate-slow 8s linear infinite;
+  .swing-rope {
+    animation: swing-rope 3s ease-in-out infinite;
+    transform-origin: top center;
   }
 
-  @keyframes rotate-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  @keyframes swing-rope {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
   }
 
-  .golden-border {
+  .climb-up {
+    animation: climb-up 2s ease-in-out infinite;
+  }
+
+  @keyframes climb-up {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .adventure-border {
     background: linear-gradient(90deg, 
-      hsl(45 85% 50%), 
-      hsl(45 80% 65%), 
-      hsl(30 60% 45%), 
-      hsl(45 80% 65%),
-      hsl(45 85% 50%)
+      hsl(25 95% 55%), 
+      hsl(30 90% 65%), 
+      hsl(30 45% 35%), 
+      hsl(30 90% 65%),
+      hsl(25 95% 55%)
     );
     background-size: 300% 100%;
-    animation: golden-flow 4s linear infinite;
+    animation: adventure-flow 4s linear infinite;
   }
 
-  @keyframes golden-flow {
+  @keyframes adventure-flow {
     0% { background-position: 0% 50%; }
     100% { background-position: 300% 50%; }
   }
 
-  .laurel-shadow {
-    filter: drop-shadow(0 4px 8px hsl(120 35% 40% / 0.3));
+  .rope-shadow {
+    filter: drop-shadow(0 4px 8px hsl(30 45% 35% / 0.3));
   }
 }

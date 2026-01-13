@@ -26,8 +26,8 @@ const RSVPButtons = ({ inviteeName }: RSVPButtonsProps) => {
     localStorage.setItem(`rsvp_status_${inviteeName}`, response);
     
     const message = response === "yes"
-      ? "Ich bin dabei! Die Götter freuen sich! ⚡🏆"
-      : "Schade, ich kann leider nicht kommen. 😢";
+      ? "ICH BIN DABEI! Let's gooo! 🔥🧗‍♂️"
+      : "Kann leider nicht dabei sein 😢";
 
     emailjs.send(
       "service_1f67z2h",
@@ -45,8 +45,8 @@ const RSVPButtons = ({ inviteeName }: RSVPButtonsProps) => {
       (error) => {
         console.log("FAILED...", error);
         toast({
-          title: "Fehler beim Senden",
-          description: "Die Nachricht konnte nicht gesendet werden.",
+          title: "Oops! Fehler",
+          description: "Nachricht konnte nicht gesendet werden.",
           variant: "destructive",
         });
       }
@@ -54,13 +54,13 @@ const RSVPButtons = ({ inviteeName }: RSVPButtonsProps) => {
 
     if (response === "yes") {
       toast({
-        title: "Heldenhaft! ⚡🏆",
-        description: "Du bist dabei! Die Götter freuen sich!",
+        title: "YEAHHH! 🔥💪",
+        description: "Du bist dabei! Das wird EPISCH!",
       });
     } else {
       toast({
         title: "Schade! 😢",
-        description: "Die Götter werden dich vermissen!",
+        description: "Wir werden dich vermissen!",
       });
     }
   };
@@ -76,35 +76,35 @@ const RSVPButtons = ({ inviteeName }: RSVPButtonsProps) => {
           <div className="space-y-4">
             <motion.div
               animate={{ 
-                scale: [1, 1.15, 1],
-                rotate: [0, -5, 5, -5, 5, 0]
+                scale: [1, 1.2, 1],
+                rotate: [0, -10, 10, -10, 10, 0]
               }}
               transition={{ duration: 0.8, repeat: Infinity, repeatDelay: 1.5 }}
             >
-              <Trophy className="w-20 h-20 mx-auto text-primary drop-shadow-lg" />
+              <Trophy className="w-24 h-24 mx-auto text-primary drop-shadow-lg" />
             </motion.div>
             <h3 className="text-4xl text-foreground tracking-wide">
-              DU BIST DABEI! ⚡
+              YESSS! DU BIST DABEI! 🔥
             </h3>
-            <p className="text-xl text-muted-foreground font-body">
-              Ein wahrer Held des Olymp! 🏛️🏆🦅
+            <p className="text-xl text-muted-foreground font-body font-bold">
+              Let's gooo! Das wird LEGENDÄR! 🧗‍♂️💪
             </p>
           </div>
         ) : (
           <div className="space-y-4">
             <Heart className="w-20 h-20 mx-auto text-accent" />
             <h3 className="text-4xl text-foreground tracking-wide">
-              Danke für deine Antwort!
+              Schade, Digga! 😢
             </h3>
             <p className="text-xl text-muted-foreground font-body">
-              Die Götter denken an dich! 💜
+              Nächstes Mal bist du dabei! 💪
             </p>
           </div>
         )}
         
         <Button
           variant="ghost"
-          className="mt-6 text-muted-foreground hover:text-foreground font-body"
+          className="mt-6 text-muted-foreground hover:text-foreground font-body font-bold"
           onClick={() => setResponded(null)}
         >
           Antwort ändern
@@ -123,32 +123,32 @@ const RSVPButtons = ({ inviteeName }: RSVPButtonsProps) => {
       <div className="flex items-center justify-center gap-3">
         <Crown className="w-8 h-8 text-primary" />
         <h3 className="text-3xl text-center text-foreground tracking-wide">
-          Wirst du erscheinen?
+          BIST DU DABEI?! 🔥
         </h3>
         <Crown className="w-8 h-8 text-primary" />
       </div>
       
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           <Button
             onClick={() => handleRSVP("yes")}
             size="lg"
-            className="w-full sm:w-auto px-10 py-8 text-2xl font-display font-bold bg-gradient-to-r from-primary via-olympian-gold-light to-primary hover:from-primary/90 hover:to-primary/90 text-primary-foreground shadow-golden shimmer-gold transition-all rounded-xl tracking-wide"
+            className="w-full sm:w-auto px-10 py-8 text-2xl font-display font-bold bg-gradient-to-r from-primary via-climbing-orange-light to-primary hover:from-primary/90 hover:to-primary/90 text-primary-foreground shadow-adventure shimmer-orange transition-all rounded-xl tracking-wide"
           >
             <ThumbsUp className="w-8 h-8 mr-3" />
-            JA, ICH KOMME!
+            KLAR, ICH BIN DABEI! 💪
           </Button>
         </motion.div>
         
-        <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Button
             onClick={() => handleRSVP("no")}
             variant="outline"
             size="lg"
-            className="w-full sm:w-auto px-10 py-8 text-2xl font-display font-bold border-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground transition-all rounded-xl tracking-wide"
+            className="w-full sm:w-auto px-10 py-8 text-2xl font-display font-bold border-2 border-muted-foreground/50 text-muted-foreground hover:bg-muted hover:text-foreground transition-all rounded-xl tracking-wide"
           >
             <ThumbsDown className="w-8 h-8 mr-3" />
-            Leider nicht
+            Kann nicht 😢
           </Button>
         </motion.div>
       </div>

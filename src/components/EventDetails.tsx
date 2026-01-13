@@ -1,25 +1,28 @@
 import { motion } from "framer-motion";
-import { Calendar, Clock, MapPin, Crown } from "lucide-react";
+import { Calendar, Clock, MapPin, Mountain } from "lucide-react";
 
 const EventDetails = () => {
   const details = [
     {
       icon: Calendar,
-      label: "WANN",
+      label: "DATUM",
       value: "Donnerstag, 05. März 2026",
       emoji: "📅",
+      subtext: "Merk dir den Tag!"
     },
     {
       icon: Clock,
-      label: "UHRZEIT",
-      value: "Ab 13:00 Uhr",
-      emoji: "⏰",
+      label: "START",
+      value: "13:00 Uhr – LOS GEHT'S!",
+      emoji: "⚡",
+      subtext: "Sei pünktlich am Start!"
     },
     {
       icon: MapPin,
-      label: "WO",
-      value: "Musterstraße 123, 12345 Berlin",
+      label: "LOCATION",
+      value: "KLETTERMAX Berlin",
       emoji: "📍",
+      subtext: "Die geilste Kletterhalle!"
     },
   ];
 
@@ -30,16 +33,16 @@ const EventDetails = () => {
       transition={{ duration: 0.6, delay: 0.5 }}
       className="w-full max-w-xl mx-auto"
     >
-      {/* Golden border effect */}
-      <div className="absolute -inset-1 golden-border rounded-2xl opacity-40 blur-sm" />
+      {/* Adventure border effect */}
+      <div className="absolute -inset-1 adventure-border rounded-2xl opacity-40 blur-sm" />
       
-      <div className="relative bg-gradient-marble rounded-2xl p-6 sm:p-8 border-2 border-primary/40 shadow-golden">
+      <div className="relative bg-gradient-rock rounded-2xl p-6 sm:p-8 border-2 border-primary/40 shadow-adventure">
         <div className="flex items-center justify-center gap-3 mb-8">
-          <Crown className="w-8 h-8 text-primary float-gentle" />
+          <Mountain className="w-8 h-8 text-primary float-gentle" />
           <h3 className="text-3xl text-center text-foreground tracking-wider">
-            DIE FEIERLICHKEITEN
+            ⚡ MISSION DETAILS ⚡
           </h3>
-          <Crown className="w-8 h-8 text-primary float-gentle" />
+          <Mountain className="w-8 h-8 text-primary float-gentle" />
         </div>
         
         <div className="space-y-4">
@@ -52,7 +55,7 @@ const EventDetails = () => {
               className="flex items-center gap-4 p-5 rounded-xl bg-card/80 hover:bg-card transition-all border border-primary/20 hover:border-primary/40 hover:shadow-elegant"
             >
               <motion.div 
-                className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary to-bronze flex items-center justify-center flex-shrink-0 shadow-golden"
+                className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary to-rope-brown flex items-center justify-center flex-shrink-0 shadow-adventure"
                 whileHover={{ rotate: 5, scale: 1.05 }}
               >
                 <item.icon className="w-7 h-7 text-primary-foreground" />
@@ -61,22 +64,30 @@ const EventDetails = () => {
                 <p className="text-sm text-secondary font-display font-bold tracking-widest">
                   {item.emoji} {item.label}
                 </p>
-                <p className="text-foreground font-semibold text-lg font-body">
+                <p className="text-foreground font-bold text-lg font-body">
                   {item.value}
                 </p>
+                {item.subtext && (
+                  <p className="text-sm text-muted-foreground font-body mt-1">
+                    {item.subtext}
+                  </p>
+                )}
               </div>
             </motion.div>
           ))}
         </div>
         
-        {/* Decorative Greek pattern */}
-        <div className="mt-8 flex justify-center gap-2 text-primary/60">
-          <span>🏛️</span>
-          <span className="tracking-widest">• • •</span>
-          <span>⚡</span>
-          <span className="tracking-widest">• • •</span>
-          <span>🏛️</span>
+        {/* Decorative climbing pattern */}
+        <div className="mt-8 flex justify-center gap-3 text-2xl">
+          <span>🧗‍♂️</span>
+          <span>🔥</span>
+          <span>💪</span>
+          <span>⛰️</span>
+          <span>🎯</span>
         </div>
+        <p className="text-center text-muted-foreground font-bold mt-4 text-sm uppercase tracking-wider">
+          Zeig was du drauf hast!
+        </p>
       </div>
     </motion.div>
   );
