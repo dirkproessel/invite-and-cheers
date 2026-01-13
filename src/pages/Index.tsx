@@ -5,6 +5,7 @@ import VideoGreeting from "@/components/VideoGreeting";
 import EventDetails from "@/components/EventDetails";
 import RSVPButtons from "@/components/RSVPButtons";
 import Confetti from "@/components/Confetti";
+import { GuestList } from "@/components/GuestList";
 import { Crown, Sparkles, Heart } from "lucide-react";
 import { INVITEES, DEFAULT_INVITEE } from "@/config/invitees";
 
@@ -51,6 +52,11 @@ const Index = () => {
               <RSVPButtons inviteeName={invitee.name} />
             </div>
           </div>
+        </section>
+
+        {/* Guest List Section */}
+        <section>
+          <GuestList />
         </section>
         
         {/* Footer */}
