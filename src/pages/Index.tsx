@@ -52,6 +52,11 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Guest List Section */}
+        <section>
+          <GuestList />
+        </section>
         
         {/* Footer */}
         <footer className="text-center py-8">
