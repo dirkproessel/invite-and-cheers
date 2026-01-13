@@ -57,22 +57,22 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        climbing: {
-          orange: "hsl(var(--climbing-orange))",
-          "orange-light": "hsl(var(--climbing-orange-light))",
+        olympian: {
+          gold: "hsl(var(--olympian-gold))",
+          "gold-light": "hsl(var(--olympian-gold-light))",
         },
-        rope: {
-          brown: "hsl(var(--rope-brown))",
+        royal: {
+          blue: "hsl(var(--royal-blue))",
         },
-        rock: {
-          gray: "hsl(var(--rock-gray))",
-          dark: "hsl(var(--rock-dark))",
+        marble: {
+          white: "hsl(var(--marble-white))",
         },
+        bronze: "hsl(var(--bronze))",
+        laurel: "hsl(var(--laurel-green))",
         sky: {
           blue: "hsl(var(--sky-blue))",
         },
-        forest: "hsl(var(--forest-green))",
-        chalk: "hsl(var(--chalk-white))",
+        cloud: "hsl(var(--cloud-white))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,11 +80,11 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        display: ["'Bebas Neue'", "sans-serif"],
-        body: ["'Nunito'", "sans-serif"],
+        display: ["'Cinzel'", "serif"],
+        body: ["'Cormorant Garamond'", "serif"],
       },
       boxShadow: {
-        adventure: "var(--shadow-adventure)",
+        golden: "var(--shadow-golden)",
         elegant: "var(--shadow-elegant)",
       },
       keyframes: {

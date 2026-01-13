@@ -8,21 +8,21 @@ interface ConfettiPiece {
   duration: number;
   color: string;
   size: number;
-  shape: "circle" | "star" | "triangle" | "rope";
+  shape: "laurel" | "star" | "lightning" | "circle";
 }
 
 const Confetti = () => {
   const pieces = useMemo<ConfettiPiece[]>(() => {
     const colors = [
-      "hsl(25 95% 55%)",     // Climbing orange
-      "hsl(30 90% 65%)",     // Light orange
-      "hsl(30 45% 35%)",     // Rope brown
-      "hsl(200 70% 50%)",    // Sky blue
-      "hsl(150 60% 45%)",    // Forest green
-      "hsl(45 90% 60%)",     // Yellow
+      "hsl(45 85% 50%)",     // Olympian gold
+      "hsl(45 80% 65%)",     // Light gold
+      "hsl(30 60% 45%)",     // Bronze
+      "hsl(215 70% 45%)",    // Royal blue
+      "hsl(120 35% 40%)",    // Laurel green
+      "hsl(280 50% 50%)",    // Accent purple
     ];
     
-    const shapes: ("circle" | "star" | "triangle" | "rope")[] = ["circle", "star", "triangle", "rope"];
+    const shapes: ("laurel" | "star" | "lightning" | "circle")[] = ["laurel", "star", "lightning", "circle"];
     
     return Array.from({ length: 35 }, (_, i) => ({
       id: i,
@@ -37,12 +37,12 @@ const Confetti = () => {
 
   const getShapePath = (shape: string) => {
     switch (shape) {
-      case "triangle":
-        return "polygon(50% 0%, 0% 100%, 100% 100%)";
+      case "laurel":
+        return "ellipse(40% 50% at 50% 50%)";
       case "star":
         return "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
-      case "rope":
-        return "ellipse(20% 50% at 50% 50%)";
+      case "lightning":
+        return "polygon(50% 0%, 70% 35%, 55% 35%, 75% 100%, 30% 55%, 45% 55%, 25% 0%)";
       default:
         return "circle(50% at 50% 50%)";
     }
