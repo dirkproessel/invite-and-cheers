@@ -56,10 +56,10 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl md:text-2xl text-foreground font-semibold tracking-widest uppercase mb-4 flex items-center justify-center gap-3"
+          className="text-xl md:text-2xl text-foreground font-bold tracking-widest uppercase mb-4 flex items-center justify-center gap-3"
         >
           <Sparkles className="w-6 h-6 text-primary" />
-          Du bist eingeladen zu
+          ACHTUNG! DU WURDEST AUSGEWÄHLT FÜR
           <Sparkles className="w-6 h-6 text-primary" />
         </motion.p>
         
@@ -79,7 +79,7 @@ const HeroSection = () => {
           className="inline-block bg-gradient-to-r from-primary via-climbing-orange-light to-primary text-primary-foreground px-10 py-5 rounded-xl shadow-adventure shimmer-orange mb-6 border-2 border-primary/30"
         >
           <span className="text-4xl sm:text-5xl font-bold tracking-wide">
-            GEBURTSTAG! 🎉
+            MEGA-KLETTER-PARTY! 🔥
           </span>
         </motion.div>
         
@@ -89,8 +89,8 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-6"
         >
-          <p className="text-2xl md:text-3xl text-foreground font-semibold tracking-wide">
-            🧗 Klettern im Klettermax 🧗
+          <p className="text-2xl md:text-3xl text-foreground font-bold tracking-wide">
+            🧗‍♂️ MISSION: KLETTERMAX EROBERN! 🧗‍♂️
           </p>
         </motion.div>
         
@@ -98,9 +98,9 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.9 }}
-          className="mt-4 text-lg text-muted-foreground italic"
+          className="mt-4 text-xl text-muted-foreground font-bold"
         >
-          Ein spannendes Kletter-Abenteuer erwartet dich!
+          💪 Bist du bereit für das krasseste Abenteuer des Jahres? 💪
         </motion.p>
       </div>
     </div>

@@ -31,7 +31,7 @@ const Index = () => {
           >
             <Sparkles className="w-8 h-8 text-primary float-gentle" />
             <h2 className="text-4xl text-center text-foreground tracking-wider">
-              {invitee.name !== DEFAULT_INVITEE.name ? `HALLO ${invitee.name.toUpperCase()}!` : "KLETTER-NACHRICHT"}
+              {invitee.name !== DEFAULT_INVITEE.name ? `YO ${invitee.name.toUpperCase()}! 🔥` : "GEHEIME VIDEO-MESSAGE"}
             </h2>
             <Sparkles className="w-8 h-8 text-primary float-gentle" />
           </motion.div>
@@ -59,25 +59,28 @@ const Index = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center gap-2 text-muted-foreground font-body"
+            className="flex items-center justify-center gap-2 text-muted-foreground font-body font-bold"
           >
             <Mountain className="w-5 h-5 text-primary" />
-            <span>Erstellt mit</span>
+            <span>Made with</span>
             <Heart className="w-5 h-5 text-accent fill-accent" />
-            <span>für ein tolles Kletter-Abenteuer!</span>
+            <span>für das KRASSESTE Abenteuer!</span>
           </motion.div>
-          <p className="text-sm text-muted-foreground/60 mt-3 font-body">
-            Fragen? Schreib an: richard@beispiel.de 📧
+          <p className="text-sm text-muted-foreground/60 mt-3 font-body font-bold">
+            Fragen? Hit me up! 📧
           </p>
           
           {/* Climbing decorative element */}
-          <div className="mt-6 flex justify-center gap-3 text-primary/40 text-2xl">
-            <span>🧗</span>
+          <div className="mt-6 flex justify-center gap-3 text-3xl">
+            <span>🧗‍♂️</span>
+            <span>🔥</span>
+            <span>💪</span>
             <span>⛰️</span>
-            <span>🪢</span>
-            <span>🎈</span>
-            <span>🏔️</span>
+            <span>🎯</span>
           </div>
+          <p className="text-muted-foreground font-bold mt-4 text-lg uppercase tracking-wider">
+            SEE YOU THERE! 🤙
+          </p>
         </footer>
       </main>
     </div>
