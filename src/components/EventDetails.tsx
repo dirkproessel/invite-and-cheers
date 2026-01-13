@@ -5,21 +5,24 @@ const EventDetails = () => {
   const details = [
     {
       icon: Calendar,
-      label: "WANN",
+      label: "DATUM",
       value: "Donnerstag, 05. März 2026",
       emoji: "📅",
+      subtext: "Merk dir den Tag!"
     },
     {
       icon: Clock,
-      label: "UHRZEIT",
-      value: "Ab 13:00 Uhr",
-      emoji: "⏰",
+      label: "START",
+      value: "13:00 Uhr – LOS GEHT'S!",
+      emoji: "⚡",
+      subtext: "Sei pünktlich am Start!"
     },
     {
       icon: MapPin,
-      label: "WO",
-      value: "Klettermax Berlin",
+      label: "LOCATION",
+      value: "KLETTERMAX Berlin",
       emoji: "📍",
+      subtext: "Die geilste Kletterhalle!"
     },
   ];
 
@@ -37,7 +40,7 @@ const EventDetails = () => {
         <div className="flex items-center justify-center gap-3 mb-8">
           <Mountain className="w-8 h-8 text-primary float-gentle" />
           <h3 className="text-3xl text-center text-foreground tracking-wider">
-            DAS ABENTEUER
+            ⚡ MISSION DETAILS ⚡
           </h3>
           <Mountain className="w-8 h-8 text-primary float-gentle" />
         </div>
@@ -61,22 +64,30 @@ const EventDetails = () => {
                 <p className="text-sm text-secondary font-display font-bold tracking-widest">
                   {item.emoji} {item.label}
                 </p>
-                <p className="text-foreground font-semibold text-lg font-body">
+                <p className="text-foreground font-bold text-lg font-body">
                   {item.value}
                 </p>
+                {item.subtext && (
+                  <p className="text-sm text-muted-foreground font-body mt-1">
+                    {item.subtext}
+                  </p>
+                )}
               </div>
             </motion.div>
           ))}
         </div>
         
         {/* Decorative climbing pattern */}
-        <div className="mt-8 flex justify-center gap-2 text-primary/60">
-          <span>🧗</span>
-          <span className="tracking-widest">• • •</span>
+        <div className="mt-8 flex justify-center gap-3 text-2xl">
+          <span>🧗‍♂️</span>
+          <span>🔥</span>
+          <span>💪</span>
           <span>⛰️</span>
-          <span className="tracking-widest">• • •</span>
-          <span>🪢</span>
+          <span>🎯</span>
         </div>
+        <p className="text-center text-muted-foreground font-bold mt-4 text-sm uppercase tracking-wider">
+          Zeig was du drauf hast!
+        </p>
       </div>
     </motion.div>
   );

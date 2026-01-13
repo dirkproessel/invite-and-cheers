@@ -43,7 +43,7 @@ const VideoGreeting = ({ videoUrl }: VideoGreetingProps) => {
         {/* Climbing-style top bar */}
         <div className="bg-gradient-to-r from-primary via-climbing-orange-light to-primary px-4 py-3 flex items-center justify-center gap-3">
           <Mountain className="w-5 h-5 text-primary-foreground" />
-          <span className="font-display font-bold text-primary-foreground text-sm tracking-widest uppercase">Kletter-Nachricht</span>
+          <span className="font-display font-bold text-primary-foreground text-sm tracking-widest uppercase">🔥 GEHEIME VIDEO-MESSAGE 🔥</span>
           <Mountain className="w-5 h-5 text-primary-foreground" />
         </div>
         
@@ -105,11 +105,11 @@ const VideoGreeting = ({ videoUrl }: VideoGreetingProps) => {
         
         {/* Caption */}
         <div className="p-5 text-center bg-gradient-rock">
-          <p className="font-display font-bold text-xl text-foreground tracking-wide">
-            🧗 Eine Nachricht für dich! 🧗
+          <p className="font-display font-bold text-2xl text-foreground tracking-wide">
+            🎬 DRÜCK PLAY FÜR DIE MESSAGE! 🎬
           </p>
-          <p className="text-muted-foreground mt-2 font-body text-lg">
-            Drück Play und erfahre mehr über das Kletter-Abenteuer
+          <p className="text-muted-foreground mt-2 font-body text-lg font-bold">
+            Check die geheimen Infos zum Abenteuer! 🤫
           </p>
         </div>
       </div>
