@@ -64,13 +64,17 @@ const RichardBirthdayApp = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-white font-sans selection:bg-orange-500">
 
-      {/* 2. Kletter-Fortschrittsbalken */}
-      <div className="fixed top-0 left-0 w-full h-3 bg-slate-800 z-50">
+      {/* Verfeinerter Kletter-Fortschrittsbalken */}
+      <div className="fixed top-0 left-0 w-full h-4 bg-slate-800 z-50 overflow-visible border-b border-slate-700">
         <div
-          className="h-full bg-gradient-to-r from-orange-500 to-yellow-400 relative transition-all duration-150"
+          className="h-full bg-gradient-to-r from-orange-600 via-orange-500 to-yellow-400 rope-texture transition-all duration-300 ease-out shadow-[0_0_15px_rgba(249,115,22,0.4)]"
           style={{ width: `${scrollProgress}%` }}
         >
-          <div className="absolute right-0 top-[-10px] bg-orange-500 rounded-full p-1 shadow-lg">
+          {/* Der kleine Kletterer am Ende des Seils */}
+          <div
+            className="absolute right-[-15px] top-[-8px] climbing-avatar"
+            style={{ transition: 'all 0.3s ease-out' }}
+          >
             🧗
           </div>
         </div>
