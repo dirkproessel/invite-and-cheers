@@ -67,10 +67,10 @@ const RichardBirthdayApp = () => {
       {/* 2. Kletter-Fortschrittsbalken */}
       <div className="fixed top-0 left-0 w-full h-3 bg-slate-800 z-50">
         <div
-          className="h-full bg-gradient-to-r from-orange-500 to-yellow-400 relative transition-all duration-150"
+          className="h-full bg-gradient-to-r from-orange-500 to-yellow-400 relative transition-all duration-150 rope-texture"
           style={{ width: `${scrollProgress}%` }}
         >
-          <div className="absolute right-0 top-[-10px] bg-orange-500 rounded-full p-1 shadow-lg">
+          <div className="absolute right-0 top-[-10px] bg-orange-500 rounded-full p-1 shadow-lg climbing-avatar">
             🧗
           </div>
         </div>
